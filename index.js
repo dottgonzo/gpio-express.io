@@ -55,7 +55,7 @@ router.get('/:pin/switch', function (req, res) {
   })
 });
 
-router.get('test', function (req, res) {
+router.get('/test', function (req, res) {
   var t={
     pin:17,
     direction:'out',
@@ -63,10 +63,18 @@ router.get('test', function (req, res) {
     label:'u',
     group:'gpio'
   }
+  console.log('locals')
+  console.log('locals')
 
   GPIO.set(t).then(function(a){
     console.log(GPIO.pins)
+    GPIO.switch(17).then(function(a){
+      res.json(a)
+    }).catch(function(err){
+      res.json({error:err})
 
+
+    })
 
     }).catch(function(err){
       res.json({error:err})
@@ -77,4 +85,7 @@ router.get('test', function (req, res) {
 });
 
 
-module.exports = router;
+module.exports = function(aa){
+  console.log(aa)
+  return router;
+}
