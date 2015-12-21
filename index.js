@@ -44,7 +44,7 @@ router.post('/:pin/off', function (req, res) {
   })
 });
 
-router.get('/:pin', function (req, res) {
+router.get('/:pin/switch', function (req, res) {
 
   GPIO.switch(req.params.pin).then(function(a){
     res.json(a)
