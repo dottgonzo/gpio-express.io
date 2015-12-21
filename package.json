@@ -1,0 +1,26 @@
+{
+  "name": "gpio-express.io",
+  "version": "1.0.0",
+  "description": "gpio switcher middleware for express/socket",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dottgonzo/gpio-express.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dottgonzo/gpio-express.io/issues"
+  },
+  "homepage": "https://github.com/dottgonzo/gpio-express.io#readme",
+  "dependencies": {
+    "express.io": "^1.1.13"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4"
+  }
+}
