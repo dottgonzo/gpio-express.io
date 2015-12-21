@@ -1,6 +1,6 @@
 {
   "name": "gpio-express.io",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "gpio switcher middleware for express/socket",
   "main": "index.js",
   "scripts": {
