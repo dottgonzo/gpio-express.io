@@ -1,6 +1,6 @@
 {
   "name": "gpio-express.io",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "gpio switcher middleware for express/socket",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/dottgonzo/gpio-express.io#readme",
   "dependencies": {
-    "express.io": "^1.1.13"
+    "gpio-switcher": "0.0.6"
   },
   "devDependencies": {
     "chai": "^3.4.1",
