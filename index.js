@@ -8,7 +8,7 @@ var GPIOlib = require('gpio-switcher');
 var GPIO = new GPIOlib();
 
 router.post('/load', function(req, res) {
-  G.load(req.body).then(function(a){
+  GPIO.load(req.body).then(function(a){
     res.json(a)
   }).catch(function(err){
     res.json(err)
@@ -23,9 +23,9 @@ router.get('/', function(req, res) {
 });
 
 
-app.post('/:pin/on', function (req, res) {
+router.post('/:pin/on', function (req, res) {
 
-  G.on(req.params.pin).then(function(a){
+  GPIO.on(req.params.pin).then(function(a){
     res.json(a)
   }).catch(function(err){
     res.json({error:err})
@@ -33,20 +33,9 @@ app.post('/:pin/on', function (req, res) {
 
   })
 });
-app.post('/:pin/off', function (req, res) {
+router.post('/:pin/off', function (req, res) {
 
-  G.off(req.params.pin).then(function(a){
-    res.json(a)
-  }).catch(function(err){
-    res.json({error:err})
-
-
-  })
-});
-
-app.get('/:pin', function (req, res) {
-
-  G.switch(req.params.pin).then(function(a){
+  GPIO.off(req.params.pin).then(function(a){
     res.json(a)
   }).catch(function(err){
     res.json({error:err})
@@ -55,7 +44,18 @@ app.get('/:pin', function (req, res) {
   })
 });
 
-app.get('test', function (req, res) {
+router.get('/:pin', function (req, res) {
+
+  GPIO.switch(req.params.pin).then(function(a){
+    res.json(a)
+  }).catch(function(err){
+    res.json({error:err})
+
+
+  })
+});
+
+router.get('test', function (req, res) {
   var t={
     pin:17,
     direction:'out',
@@ -64,8 +64,8 @@ app.get('test', function (req, res) {
     group:'gpio'
   }
 
-  G.set(t).then(function(a){
-    console.log(G.pins)
+  GPIO.set(t).then(function(a){
+    console.log(GPIO.pins)
 
 
     }).catch(function(err){
