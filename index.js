@@ -3,7 +3,7 @@
 var express = require('express');
 var router = express.Router();
 var GPIOlib = require('gpio-switcher');
-var rpj = express.Router();
+
 
 var GPIO = new GPIOlib();
 
