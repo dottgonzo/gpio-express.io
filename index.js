@@ -85,7 +85,11 @@ router.get('/test', function (req, res) {
 });
 
 
-module.exports = function(aa){
-  console.log(aa)
+module.exports = function(config){
+
+if(config){
+  GPIO.load(config)
+}
+
   return router;
 }
